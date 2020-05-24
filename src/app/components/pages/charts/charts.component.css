@@ -3,7 +3,5 @@
 }
 
 @media only screen and (max-width: 576px) {
-  .charts-container {
-    animation: slideInRight .2s ease;
-  }
+ 
 }
