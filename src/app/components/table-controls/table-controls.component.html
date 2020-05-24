@@ -4,15 +4,15 @@
       <h5>Filter statistics by confirmed cases or associated deaths per day:</h5>
     </div>
     <div class="col-sm-6 col-xs-12">
-      <form class="form d-flex">
+      <form class="form d-flex align-items-center">
         <div class="form-group pl-3 pr-3">
          <label class="radio-wrapper" for="cases" (click)="emitShowCases($event)">
-          <input type="radio" class="ml-1" name="statistics" value="cases" id="cases-input" [checked]="casesChecked"><span class="checkmark"></span><small>Confirmed cases</small>  
+          <input type="radio" class="ml-1" name="statistics" value="cases" id="cases-input" [checked]="casesChecked"><span class="checkmark"></span>Confirmed cases 
         </label> 
         </div>
         <div class="form-group pl-3 pr-3">
           <label class="radio-wrapper" for="deaths" (click)="emitShowDeaths($event)">
-          <input type="radio" class="ml-1" name="statistics" value="deaths" id="deaths-input"[checked]="deathsChecked"><span class="checkmark"></span><small>Associated deaths</small> 
+          <input type="radio" class="ml-1" name="statistics" value="deaths" id="deaths-input"[checked]="deathsChecked"><span class="checkmark"></span>Associated deaths
         </label>
         </div> 
     </form> 
