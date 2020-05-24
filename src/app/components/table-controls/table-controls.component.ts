@@ -9,6 +9,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class TableControlsComponent implements OnInit {
   @Output() showCases: EventEmitter<Event> = new EventEmitter();
   @Output() showDeaths: EventEmitter<Event> = new EventEmitter();
+  casesChecked: boolean = true;
+  deathsChecked:boolean = false;
 
   constructor() { }
 
@@ -16,11 +18,16 @@ export class TableControlsComponent implements OnInit {
   }
 
   emitShowCases(event: Event) {
-    this.showCases.emit(event)
+    this.showCases.emit(event);
+    this.deathsChecked = false;
+    this.casesChecked = true;
   }
 
   emitShowDeaths(event: Event) {
     this.showDeaths.emit(event);
+    this.casesChecked = false;
+    this.deathsChecked = true;
+   
   }
 
 }

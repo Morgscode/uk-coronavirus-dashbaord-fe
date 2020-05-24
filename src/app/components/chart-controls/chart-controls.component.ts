@@ -12,27 +12,42 @@ export class ChartControlsComponent implements OnInit {
   @Output() setDailyData: EventEmitter<any> = new EventEmitter();
   @Output() setDataInterval: EventEmitter<number> = new EventEmitter();
   @Input()  dataInterval: number;
+  isLineGraph: boolean;
+  isBarChart: boolean;
+  isDaily: boolean;
+  isCumulative: boolean;
 
   constructor() { }
 
   ngOnInit() {
-
+    this.isLineGraph = true;
+    this.isBarChart = false;
+    this.isDaily = true;
+    this.isCumulative = false;
   }
 
   public emitBarChart(): void {
     this.setBarChart.emit();
+    this.isLineGraph = false;
+    this.isBarChart = true;
   }
 
   public emitLineChart(): void {
     this.setLineChart.emit();
+    this.isBarChart = false;
+    this.isLineGraph = true;
   }
 
   public emitCumulativeData(): void {
     this.setCumulativeData.emit();
+    this.isDaily = false;
+    this.isCumulative = true;
   }
 
   public emitDailyData(): void {
     this.setDailyData.emit();
+    this.isCumulative = false;
+    this.isDaily = true;
   }
 
   public emitDataInterval(): void {
