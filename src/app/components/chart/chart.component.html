@@ -1,6 +1,6 @@
 <app-chart-controls (setBarChart)="showBarChart()" (setLineChart)="showLineChart()" (setDailyData)="prepareDailyChartData()" (setCumulativeData)="prepareCumulativeChartData()" (setDataInterval)="changeDataInterval($event)"></app-chart-controls>
 <ng-template [ngIf]="chartLoaded">
-  <div class="chart-container panel p-3 mb-4">
+  <div class="chart-container panel p-3">
     <div class="chart p3">
       <canvas baseChart width="100%"
       [datasets]="ChartData"
