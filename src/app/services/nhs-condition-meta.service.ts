@@ -8,7 +8,7 @@ import { NHSConditionApiMeta } from '../models/NHSConditionApiMeta';
 })
 export class NHSConditionMetaService {
 
-  covidInfoBaseUrl: string = 'http://api.ukcoronavirusstatistics.com/info/';
+  covidInfoBaseUrl: string = 'https://api.ukcoronavirusstatistics.com/info/';
   conditionString: string = 'nhs-covid-19';
   
   constructor(private http: HttpClient) {}
