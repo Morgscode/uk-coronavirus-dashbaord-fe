@@ -14,9 +14,6 @@ export class ChartDataService {
   constructor() { }
 
   public prepareDailyCasesGraphData(casesData: CovidCasesStatisticGroup[], deathsData: CovidMortalityStatisticGroup[],lineChartData: ChartDataSets[], lineChartLabels: Label[], dataInterval: number) {
-    console.log(casesData);
-    console.log(deathsData);
-    console.log(dataInterval);
     let deathsDataIndex: number = 0;
     let arrLengthDiff: number = casesData.length - deathsData.length;
     for (let arrIndex = 0; arrIndex < casesData.length; arrIndex += dataInterval) {
