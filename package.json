@@ -1,6 +1,6 @@
 {
-  "name": "uk-covid-dashboard",
-  "version": "0.0.0",
+  "name": "uk-covid-dashboard-fe",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -37,6 +37,7 @@
     "@nguniversal/express-engine": "^9.0.2",
     "bootstrap": "4.4.1",
     "chart.js": "^2.9.3",
+    "compression": "^1.7.4",
     "express": "^4.15.2",
     "gulp": "^3.9.1",
     "gulp-gzip": "^1.4.2",
