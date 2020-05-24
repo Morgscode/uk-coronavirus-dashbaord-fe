@@ -9,7 +9,7 @@ app.use(compression());
 app.use(express.static(__dirname + '/dist/uk-covid-dashboard/browser'));
 // Start the app by listening on the default
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/uk-covid-dashboard/browser/index.html.gz'));
+  res.sendFile(path.join(__dirname + '/dist/uk-covid-dashboard/browser/index.html'));
 });
 // Heroku port
 app.listen(process.env.PORT || 4200);
