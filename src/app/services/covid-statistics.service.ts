@@ -18,14 +18,16 @@ import { CovidCasesStatisticGroup } from '../models/CovidCasesStatisticGroup';
 
 export class CovidStatisticsService {
 
-  covidStatsBaseUrl: string = 'https://api.ukcoronavirusstatistics.com/stats/';
-  
+  covidStatsBaseUrl: string ;
+  env: string = 'prod';
   totalCovidMortalityString: string = 'deaths/latest';
   totalCovidCasesString: string = 'cases/latest';
   allCovidCasesString: string = 'cases';
   allCovidDeathsString: string = 'deaths';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    (this.env == 'dev') ? this.covidStatsBaseUrl = 'http://127.0.0.1:8888/uk-coronavirus-dashboard-api/public/stats/' : this.covidStatsBaseUrl = 'https://api.ukcoronavirusstatistics.com/stats/';
+  }
 
   public getCovidMortalityTotal(): Observable<CovidMortalityStatisticGroup> {
     return this.http.get<CovidMortalityStatisticGroup>(`${this.covidStatsBaseUrl}${this.totalCovidMortalityString}`);

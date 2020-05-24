@@ -7,11 +7,13 @@ import { NHSConditionApiMeta } from '../models/NHSConditionApiMeta';
   providedIn: 'root'
 })
 export class NHSConditionMetaService {
-
-  covidInfoBaseUrl: string = 'https://api.ukcoronavirusstatistics.com/info/';
+  env: string = 'prod';
+  covidInfoBaseUrl: string;
   conditionString: string = 'nhs-covid-19';
   
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    (this.env == 'dev') ? this.covidInfoBaseUrl = 'http://127.0.0.1:8888/uk-coronavirus-dashboard-api/public/info/' : this.covidInfoBaseUrl = 'https://api.ukcoronavirusstatistics.com/info/';
+  }
 
   public getNHSConditionApiMeta(): Observable<NHSConditionApiMeta> {
     return this.http.get<NHSConditionApiMeta>(`${this.covidInfoBaseUrl}${this.conditionString}`);
