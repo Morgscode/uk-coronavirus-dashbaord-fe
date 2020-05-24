@@ -1,0 +1,12 @@
+<app-header (activeNav)="activateNav($event)"></app-header>
+<div class="nav-container" [class.active]="isActive">
+  <nav class="nav">
+    <h2 class="nav-close" (click)="hideNav()"><i class="fa fa-times"></i></h2>
+    <ul class="nav-list">
+      <li class="nav-item mb-4" (click)="hideNav()"><a class="nav-link" routerLink="/">Dahboard Home</a></li>
+      <li class="nav-item mb-4" (click)="hideNav()"><a class="nav-link" routerLink="/about">About Coronavirus</a></li>
+      <li class="nav-item mb-4" (click)="hideNav()"><a class="nav-link" routerLink="/tables">Tables</a></li>
+      <li class="nav-item mb-4" (click)="hideNav()"><a class="nav-link" routerLink="/charts">Charts</a></li>
+    </ul>
+  </nav>
+</div>

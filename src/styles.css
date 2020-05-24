@@ -1,1 +1,120 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --color-red: #e84118;
+  --color-red-dark: #c23616;
+  --color-white: #f5f6fa;
+  --color-black: #2f3640;
+  --line-height: 1.5;
+  --brand-strip-px: 5px;
+  --border-radius-px: 3px;
+}
+
+*,*::before, *::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 300px;
+  padding-top: 75px;
+  padding-bottom: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-black);
+  min-height: 100vh;
+}
+
+.heading-secondary {
+  line-height: var(--line-height);
+}
+
+.body-text {
+  line-height: var(--line-height);
+}
+
+.text-red {
+  color: var(--color-red);
+}
+
+.panel {
+  display: block;
+  background-color: rgba(236, 240, 241,0.75);
+  border-radius: var(--border-radius-px);
+  position: relative;
+  z-index: 1;
+}
+
+.chart {
+  max-height: 100vh;
+}
+
+.flex-box-fill {
+  flex: 1 !important;
+}
+
+.panel::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: var(--brand-strip-px);
+  width: 100%;
+  background-image: linear-gradient(to right bottom, var(--color-red), var(--color-red-dark));
+  z-index: 2;
+  border-radius: var(--border-radius-px);
+}
+
+
+.stats-figure {
+  color: var(--color-red);
+  font-size: 42px;
+}
+
+.stats-figure--small {
+  font-size: 1rem;
+} 
+
+.table-row {
+  border-bottom: 2px solid var(--color-black);
+}
+
+.table-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-cell:not(:last-child) {
+  border-right: 2px solid var(--color-black);
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  
+  .container {
+    max-width: 1300px !important;
+  }
+  
+}
+
+@media only screen and (min-width: 991px) {
+  body {
+    padding-top: 150px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767.9px) {
+  .container {
+    max-width: 640px !important;
+  }
+}

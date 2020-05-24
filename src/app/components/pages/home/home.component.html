@@ -1,0 +1,46 @@
+<div class="container home-container">
+  <div class="row mb-4">
+    <div class="col-12">
+      <h1>Coronavirus in the UK</h1>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-md-6 col-sm-12">
+      <div class="p-3 panel">
+        <h5 class="heading-secondary text-red mb-4">On the 11th of March 2020, A gloabl pandemic caused by the SARS-2
+          COVID-19 virus was declared.</h5>
+        <p class="mb-4">This dashboard provides numeric and graphical representations of a varity of statistics which
+          can be used to track the current state of the pandemic.</p>
+        <p class="mb-4">Statitics and Information used within this service have been made publicly available by Public
+          Health England (<a href="https://coronavirus.data.gov.uk/" target="_blank">PHE</a>), The Department for Health
+          and Social Care (<a href="https://www.gov.uk/government/organisations/department-of-health-and-social-care"
+            target="_blank">DHSC</a>) and The NHS API developer <a href="https://developer.api.nhs.uk/"
+            target="_blank">portal</a>.</p>
+        <p class="mb-0">You can read the UK Governments official statement on Covid-19 <a
+            href="https://www.gov.uk/coronavirus" target="_blank">here</a>.</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <app-covid-mortality-total></app-covid-mortality-total>
+        <app-covid-cases-total></app-covid-cases-total>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-sm-6 col-xs-12">
+        <app-covid-mortality-daily-total></app-covid-mortality-daily-total>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+        <app-covid-cases-daily-total></app-covid-cases-daily-total>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-12">
+      <h2>About COVID-19</h2>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-12">
+      <app-nhs-covid-info></app-nhs-covid-info>
+    </div>
+  </div>
+</div>

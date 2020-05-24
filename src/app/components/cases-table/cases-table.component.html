@@ -1,0 +1,10 @@
+<div class="panel p-3 cases-table-container">
+    <div class="table-row mb-4" *ngFor="let casesStatistic of casesStatistics">
+      <div class="row">
+        <div class="col-sm-4 col-xs-12 table-cell text-center"> Date: <span class="stats-figure">{{ casesStatistic.date }}</span> </div>
+        <div class="col-sm-4 col-xs-12 table-cell text-center"> Daily Confirmed Infections: <span class="stats-figure">{{ casesStatistic.daily_confirmed_cases }}</span> </div>
+        <div class="col-sm-4 col-xs-12 table-cell text-center"> Cumalative total: <span class="stats-figure">{{ casesStatistic.uk_total_confirmed_cases }}</span></div>
+      </div>
+    </div>
+</div>
+

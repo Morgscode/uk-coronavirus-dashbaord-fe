@@ -1,0 +1,45 @@
+header.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 10;
+}
+
+.dashboard-main-header {
+  background-color: var(--color-black);
+  position: relative;
+  color: var(--color-white);
+  padding: 1.5rem;
+}
+
+.dashboard-main-header::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: var(--brand-strip-px);
+  width: 100%;
+  background-image: linear-gradient(to right bottom, var(--color-red), var(--color-red-dark));
+  z-index: 2;
+  border-radius: var(--border-radius-px);
+}
+
+.nav-trigger {
+  position: relative;
+  left: -25px;
+}
+
+.nav-trigger:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .header-brand {
+    font-size: 18px;
+  }
+  .dashboard-main-header {
+    padding: .5rem;
+  }
+}
