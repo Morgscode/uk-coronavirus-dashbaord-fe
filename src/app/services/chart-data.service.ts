@@ -32,9 +32,6 @@ export class ChartDataService {
   }
 
   public prepareCumulativeGraphData(casesData: CovidCasesStatisticGroup[], deathsData: CovidMortalityStatisticGroup[],lineChartData: ChartDataSets[], lineChartLabels: Label[], dataInterval: number) {
-    console.log(casesData);
-    console.log(deathsData);
-    console.log(typeof(dataInterval));
     let deathsDataIndex: number = 0;
     let arrLengthDiff: number = casesData.length - deathsData.length;
     for (let arrIndex = 0; arrIndex < casesData.length; arrIndex += dataInterval) {

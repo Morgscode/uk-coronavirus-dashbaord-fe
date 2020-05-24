@@ -16,7 +16,6 @@ export class CasesTableComponent implements OnInit {
   ngOnInit() {
     this.covidStatisticsServive.getAllCovidCases().subscribe(covidCases => {
       this.casesStatistics = covidCases.reverse();
-      console.log(this.casesStatistics);
       for (let casesStatistic of this.casesStatistics) {
         casesStatistic.date = this.sqlDateConverter.convertFromSQLDate(casesStatistic.date);
       }
