@@ -6,7 +6,6 @@
     "start": "node server.js",
     "build": "ng build",
     "build-prod": "ng build --prod",
-    "compress": "gulp compress",
     "deploy": "git push heroku master",
     "test": "ng test",
     "lint": "ng lint",
@@ -15,7 +14,7 @@
     "serve:ssr": "node dist/uk-covid-dashboard/server/main.js",
     "build:ssr": "ng build --prod && ng run uk-covid-dashboard:server:production",
     "prerender": "ng run uk-covid-dashboard:prerender",
-    "heroku-postbuild": "npm-run-all build-prod compress"
+    "heroku-postbuild": "npm-run-all build-prod"
   },
   "private": true,
   "engines": {
@@ -39,8 +38,6 @@
     "chart.js": "^2.9.3",
     "compression": "^1.7.4",
     "express": "^4.15.2",
-    "gulp": "^3.9.1",
-    "gulp-gzip": "^1.4.2",
     "ng2-charts": "^2.3.0",
     "npm-run-all": "^4.1.5",
     "rxjs": "~6.5.4",
