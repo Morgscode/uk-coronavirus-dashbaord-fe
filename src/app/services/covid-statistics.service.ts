@@ -18,7 +18,7 @@ import { CovidCasesStatisticGroup } from '../models/CovidCasesStatisticGroup';
 
 export class CovidStatisticsService {
 
-  covidStatsBaseUrl: string = 'http://127.0.0.1:8888/uk-coronavirus-dashboard-api/public/stats/';
+  covidStatsBaseUrl: string = 'http://api.ukcoronavirusstatistics/stats/';
   
   totalCovidMortalityString: string = 'deaths/latest';
   totalCovidCasesString: string = 'cases/latest';
