@@ -12,7 +12,7 @@
     "serve:ssr": "node dist/uk-covid-dashboard/server/main.js",
     "build:ssr": "ng build --prod && ng run uk-covid-dashboard:server:production",
     "prerender": "ng run uk-covid-dashboard:prerender",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "ng build"
   },
   "private": true,
   "engines": {
