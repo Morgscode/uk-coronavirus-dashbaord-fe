@@ -19,7 +19,7 @@ import { CovidCasesStatisticGroup } from '../models/CovidCasesStatisticGroup';
 export class CovidStatisticsService {
 
   covidStatsBaseUrl: string ;
-  env: string = 'prod';
+  env: string = 'dev';
   totalCovidMortalityString: string = 'deaths/latest';
   totalCovidCasesString: string = 'cases/latest';
   allCovidCasesString: string = 'cases';
@@ -44,7 +44,5 @@ export class CovidStatisticsService {
   public getAllCovidCases(): Observable<CovidCasesStatisticGroup[]> {
     return this.http.get<CovidCasesStatisticGroup[]>(`${this.covidStatsBaseUrl}${this.allCovidCasesString}`);
   }
-
- 
 
 }

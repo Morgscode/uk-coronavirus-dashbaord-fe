@@ -7,7 +7,7 @@ import { NHSConditionApiMeta } from '../models/NHSConditionApiMeta';
   providedIn: 'root'
 })
 export class NHSConditionMetaService {
-  env: string = 'pro';
+  env: string = 'dev';
   covidInfoBaseUrl: string;
   conditionString: string = 'nhs-covid-19';
   
