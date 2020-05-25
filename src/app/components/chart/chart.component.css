@@ -1,3 +1,4 @@
 .chart-container {
   animation: slideInRight .7s ease;
+  max-width: 1600px !important;
 }

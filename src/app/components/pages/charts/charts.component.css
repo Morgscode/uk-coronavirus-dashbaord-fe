@@ -5,3 +5,9 @@
 @media only screen and (max-width: 576px) {
  
 }
+
+@media only screen and (min-width: 1400px) {
+  .charts-container {
+    max-width: 1600px !important;
+  }
+}
