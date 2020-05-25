@@ -1,0 +1,17 @@
+.header-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .8;
+  z-index: -2;
+  animation: slideDown 2s ease;
+}
+
+.uk-outline-bg {
+  height: 100vh;
+  position: absolute;
+  left: 65%;
+  top: 35%;
+  z-index: -1; 
+  animation: slideUp 2s ease;
+} 
