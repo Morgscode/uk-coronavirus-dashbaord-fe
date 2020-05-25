@@ -23,6 +23,11 @@ body {
   color: var(--color-black);
   min-height: 100vh;
   position: relative;
+  background-image: url(assets/icons/uk-outline.svg);
+  background-size: auto 1300px;
+  background-position: 85% 450px;
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
 .heading-secondary {
@@ -222,20 +227,34 @@ body {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  body {
+    background-position: 85% 150px;
+  }
+}
+
 @media only screen and (min-width: 576px) and (max-width: 767.9px) {
   .container {
     max-width: 640px !important;
   }
-
 }
 
 @media only screen and (max-width: 576px) {
+
+  body {
+    background-position: 50% 300px;
+  }
+
   .panel {
     margin-bottom: 25px;
   }
 
   h1 {
-    font-size: 2.2rem !important;
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.8rem;
   }
 }
 
