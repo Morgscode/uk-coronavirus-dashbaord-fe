@@ -12,7 +12,7 @@ import { CovidCasesStatisticGroup } from '../models/CovidCasesStatisticGroup';
  * 
  */
 
-@Injectable({
+@Injectable({ 
   providedIn: 'root'
 })
 
