@@ -1,7 +1,9 @@
-<app-tables-controls (showCases)="showCases()" (showDeaths)="showDeaths()"></app-tables-controls>
+<div class="tables pt-4">
+  <app-tables-controls (showCases)="showCases()" (showDeaths)="showDeaths()"></app-tables-controls>
 <ng-template [ngIf]="casesActive">
   <app-cases-table></app-cases-table>
 </ng-template>
 <ng-template [ngIf]="deathsActive">
   <app-deaths-table></app-deaths-table>
 </ng-template>
+</div>
