@@ -8,5 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'uk-covid-dashboard';
   headerBgImg = 'assets/backgrounds/gradient-bg.png';
-  ukMapOutline = 'assets/icons/uk-outline.svg';
 }
