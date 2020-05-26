@@ -24,6 +24,7 @@ export class ChartControlsComponent implements OnInit {
     this.isBarChart = false;
     this.isDaily = true;
     this.isCumulative = false;
+    this.dataInterval = 1;
   }
 
   public emitBarChart(): void {

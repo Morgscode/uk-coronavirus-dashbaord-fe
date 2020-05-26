@@ -92,6 +92,8 @@ body {
   flex-direction: column;
 }
 
+/* custom radio buttons */
+
 .radio-wrapper {
   position: relative;
   padding-left: 35px;
@@ -156,6 +158,30 @@ body {
   background: var(--color-white);
 } 
 
+/* custom select */
+
+.select-wrapper {
+  position: relative;
+  font-family: Arial;
+}
+
+.select-wrapper select {
+  display: inline-block;
+  background-color: var(--color-red-dark);
+  color: var(--color-white);
+  border: none;
+  border-radius: 3px;
+  height: 30px;
+  width: 100px;
+  text-align: center;
+}
+
+.select-wrapper select:focus {
+  outline: none;
+}
+
+/* keyframanimations */
+
 @keyframes slideInRight {
   0% {
     opacity: 0;
@@ -188,6 +214,8 @@ body {
     transformY: 0%;
   }
 }
+
+/* global media queries */
 
 @media only screen and (min-width: 1200px) {
   
