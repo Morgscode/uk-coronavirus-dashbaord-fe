@@ -27,14 +27,16 @@
           </div>
         </form> 
       </div>
-      <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
+      <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 d-flex align-items-center">
         <small><label for="dataInterval">See stats for every: </label></small>
-        <select class="ml-1" [(ngModel)]="dataInterval" (change)="emitDataInterval()" name="dataInterval">
-          <option value="1">1 Day</option>
-          <option value="2">2 Days</option>
-          <option value="5">5 Days</option>
-          <option value="7">7 Days</option>
-        </select>
+        <div class="select-wrapper">
+          <select class="ml-1" [(ngModel)]="dataInterval" (change)="emitDataInterval()" name="dataInterval">
+            <option value="1" selected="selected">1 Day</option>
+            <option value="2">2 Days</option>
+            <option value="5">5 Days</option>
+            <option value="7">7 Days</option>
+          </select>
+        </div>
       </div> 
     </div>
 </div>
