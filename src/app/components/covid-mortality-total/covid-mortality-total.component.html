@@ -1,7 +1,7 @@
 <div class="panel p-3">
   <div class="stats-wrapper">
     <h5 class="mb-4">Total COVID-19 associated UK deaths</h5>
-    <p class="stats-figure mb-4"><strong>{{ totalUKCovidMortality }}</strong></p>
+    <p class="stats-figure mb-4"><strong>{{ totalUKCovidMortality | number:'':'en-GB' }}</strong></p>
   </div>
   <small>last updated: {{ readableDate }}</small>
 </div>

@@ -2,8 +2,8 @@
   <div class="table-row" *ngFor="let mortalityStatistic of mortalityStatistics">
     <div class="row">
       <div class="col-md-4 col-sm-12 col-xs-12 table-cell text-center"> <p>Date: </p><span class="stats-figure">{{ mortalityStatistic.date }}</span> </div>
-      <div class="col-md-4 col-sm-12 col-xs-12 table-cell text-center"> <p>Daily Confirmed Associated Deaths: </p>  <span class="stats-figure">{{ mortalityStatistic.daily_uk_covid_deaths }}</span> </div>
-      <div class="col-sm-4 col-xs-12 table-cell text-center"> <p>Cumalative total: </p>  <span class="stats-figure">{{ mortalityStatistic.uk_death_total }}</span></div>
+      <div class="col-md-4 col-sm-12 col-xs-12 table-cell text-center"> <p>Daily Confirmed Associated Deaths: </p>  <span class="stats-figure">{{ mortalityStatistic.daily_uk_covid_deaths | number:'':'en-GB' }}</span> </div>
+      <div class="col-sm-4 col-xs-12 table-cell text-center"> <p>Cumalative total: </p>  <span class="stats-figure">{{ mortalityStatistic.uk_death_total | number:'':'en-GB' }}</span></div>
     </div>
   </div>
 </div>
