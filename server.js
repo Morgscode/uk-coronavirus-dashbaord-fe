@@ -8,7 +8,7 @@ app.use(compression());
 app.use(express.static(__dirname + '/dist/uk-covid-dashboard/browser'));
 // route all get requests through index.html
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/dist/uk-covid-dashboard/browser/index.html'));
+  res.sendFile(path.join(__dirname + '/dist/uk-covid-dashboard/browser/main.js'));
 });
 // Heroku port
 console.log(process.env.PORT);
