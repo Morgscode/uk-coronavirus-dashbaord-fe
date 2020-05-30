@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng run uk-covid-dashboard:server:production",
+    "start": "node server.js",
     "build": "ng build",
     "build-prod": "ng build --prod",
     "deploy": "git push heroku master",
@@ -13,7 +13,7 @@
     "prerender": "ng run uk-covid-dashboard:prerender",
     "dev:ssr": "ng run uk-covid-dashboard:serve-ssr",
     "serve:ssr": "node dist/uk-covid-dashboard/server/main.js",
-    "build:ssr": "ng build --prod && uk-covid-dashboard:server:production",
+    "build:ssr": "ng build --prod && ng run uk-covid-dashboard:server:production",
     "heroku-postbuild": "npm-run-all build-prod"
   },
   "private": true,
