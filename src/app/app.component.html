@@ -1,6 +1,6 @@
 
 <div class="app-wrapper">
-  <img [src]="headerBgImg" class="header-bg-img" alt="UK Coronavirus statistics">
+  <img *ngIf="showBgImg" [src]="headerBgImg" class="header-bg-img" alt="UK Coronavirus statistics">
   <header>
     <app-navbar></app-navbar>
   </header>
@@ -8,3 +8,4 @@
   <router-outlet></router-outlet>
 </main>
 </div>
+ 

@@ -1,11 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'uk-covid-dashboard';
-  headerBgImg = 'assets/backgrounds/gradient-bg.png';
+export class AppComponent implements OnInit {
+  title: string = 'uk-covid-dashboard';
+  headerBgImg: string = '/assets/backgrounds/gradient-bg.png';
+  showBgImg: boolean;
+ 
+  ngOnInit() {
+    if (window.innerWidth > 576) {
+      this.showBgImg = true;
+    } else {
+      this.showBgImg = false;
+    }
+  }
 }
