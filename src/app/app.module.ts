@@ -27,6 +27,7 @@ import { DeathsTableComponent } from './components/deaths-table/deaths-table.com
 import { ChartComponent } from './components/chart/chart.component';
 import { ChartsComponent } from './components/pages/charts/charts.component';
 import { ChartControlsComponent } from './components/chart-controls/chart-controls.component';
+import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 
 @NgModule({ 
   declarations: [ 
@@ -48,6 +49,7 @@ import { ChartControlsComponent } from './components/chart-controls/chart-contro
     ChartComponent,
     ChartsComponent,
     ChartControlsComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
