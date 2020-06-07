@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CovidStatisticsService } from '../../services/covid-statistics.service';
+import { CovidStatisticsService } from '../../../services/covid-statistics.service';
 import { DateConversionService } from 'src/app/services/date-conversion.service';
-import { CovidCasesStatisticGroup } from '../../models/CovidCasesStatisticGroup';
+import { CovidCasesStatisticGroup } from '../../../models/CovidCasesStatisticGroup';
 
 @Component({
   selector: 'app-covid-cases-total',
