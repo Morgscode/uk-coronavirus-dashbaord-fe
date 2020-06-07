@@ -18,10 +18,10 @@ export class AppComponent implements OnInit {
   constructor(public router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        gtag('set', 'page', event.urlAfterRedirects);
-        gtag('send', 'pageview');
-      }
-    })
+        console.log(event);
+        gtag('config', 'UA-167411505-1', { 'page_path': event.urlAfterRedirects });
+      } 
+    }) 
   }
  
   ngOnInit() {

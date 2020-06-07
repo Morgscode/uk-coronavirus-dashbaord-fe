@@ -6,6 +6,7 @@ import { NHSConditionApiMeta } from '../models/NHSConditionApiMeta';
 @Injectable({
   providedIn: 'root'
 })
+
 export class NHSConditionMetaService {
   env: string = 'prod';
   covidInfoBaseUrl: string;
