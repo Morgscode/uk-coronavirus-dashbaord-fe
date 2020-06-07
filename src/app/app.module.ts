@@ -1,4 +1,4 @@
-import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserModule, Title, Meta } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule } from "@angular/forms";
@@ -58,7 +58,7 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
     ChartsModule,
     FormsModule
   ],
-  providers: [CovidStatisticsService, NHSConditionMetaService, DateConversionService, HttpClient, ChartDataService, Title],
+  providers: [CovidStatisticsService, NHSConditionMetaService, DateConversionService, HttpClient, ChartDataService, Title, Meta],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
