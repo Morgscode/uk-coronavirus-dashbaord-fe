@@ -19,7 +19,7 @@ import { CovidCasesStatisticGroup } from '../models/CovidCasesStatisticGroup';
 export class CovidStatisticsService {
 
   covidStatsBaseUrl: string ;
-    env: string = 'prod';
+  env: string = 'dev';
   totalCovidMortalityString: string = 'deaths/latest';
   totalCovidCasesString: string = 'cases/latest';
   allCovidCasesString: string = 'cases';

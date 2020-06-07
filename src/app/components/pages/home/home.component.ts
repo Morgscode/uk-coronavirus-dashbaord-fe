@@ -8,7 +8,7 @@ import { Meta } from '@angular/platform-browser';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  
+ 
   constructor(private titleService: Title, private meta: Meta) { }
 
   ngOnInit() {
