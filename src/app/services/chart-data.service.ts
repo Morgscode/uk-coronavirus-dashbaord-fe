@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
-
 import { CovidCasesStatisticGroup } from '../models/CovidCasesStatisticGroup';
 import { CovidMortalityStatisticGroup} from '../models/CovidMortalityStatisticGroup';
 

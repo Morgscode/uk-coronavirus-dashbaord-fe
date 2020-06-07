@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title }     from '@angular/platform-browser';
 
 @Component({
   selector: 'app-tables',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: Title) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.titleService.setTitle( 'UK Coronavirus Statistics - Tabular statistics for deaths and confirmed infections' );
   }
 
 }
