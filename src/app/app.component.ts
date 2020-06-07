@@ -30,4 +30,5 @@ export class AppComponent implements OnInit {
       this.showBgImg = false;
     }
   }
+  
 }
