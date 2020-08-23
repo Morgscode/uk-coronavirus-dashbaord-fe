@@ -3,6 +3,16 @@
   <h3 class="mb-4"> {{ conditionName | uppercase }} </h3>
   <p class="mb-4"> {{ covidDescription }}</p>
   <p class="mb-4"><u>Symptoms:</u></p>
-  <p class="mb-4" [innerHTML]="symptoms"></p>
+  <p class="ml-4 mb-4" [innerHTML]="symptoms"></p>
+  <p class="mb-4"><u>Self Care Advice:</u></p>
+  <p class="ml-4 mb-4" [innerHTML]="selfCareAdvice"></p>
+  <p class="mb-4"><u>Self Isolation Advice:</u></p>
+  <p class="ml-4 mb-4" [innerHTML]="selfIsolation"></p>
+  <p class="mb-4"><u>Treatment:</u></p>
+  <p class="mb-4" [innerHTML]="otherTreatments"></p>
+  <p class="mb-4"><u>Diagnosis Information:</u></p>
+  <p class="ml-4 mb-4" [innerHTML]="diagnosis"></p>
+  <p class="mb-4"><u>Prevention:</u></p>
+  <p class="ml-4 mb-4" [innerHTML]="prevention"></p>
   <p>You can read more about COVID-19 from the NHS <a [href]="nhsWebsiteUrl" target="_blank">here</a>.</p>
 </div>
