@@ -1,21 +1,22 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.css"],
 })
-
 export class HeaderComponent implements OnInit {
-  event: Event;
-  @Output() activeNav: EventEmitter<Event> = new EventEmitter();
+  activeNav: boolean;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  activateNav() {
+    this.activeNav = true;
   }
 
-  emitActiveNav(event: Event) {
-    this.activeNav.emit(event);
+  resetNav() {
+    this.activeNav = false;
   }
 }

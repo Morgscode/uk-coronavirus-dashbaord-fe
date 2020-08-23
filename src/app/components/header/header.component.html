@@ -6,9 +6,10 @@
           <h2 class="text-light header-brand">Track UK Coronavirus Statistics</h2>
         </a>
       </div>
-      <div class="nav-trigger ml-auto" (click)="emitActiveNav($event)">
+      <div class="nav-trigger ml-auto" (click)="activateNav()">
         <h2><i class="fa fa-bars nav-trigger-icon"></i></h2>
       </div>
     </div>
   </div>
 </header>
+<app-navbar [activeNav]="activeNav" (closeNav)="resetNav()"></app-navbar>
