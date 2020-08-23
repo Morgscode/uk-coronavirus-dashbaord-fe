@@ -14,14 +14,18 @@ header.header {
 }
 
 .dashboard-main-header::after {
-  content: '';
+  content: "";
   display: inline-block;
   position: absolute;
   bottom: 0px;
   left: 0px;
   height: var(--brand-strip-px);
   width: 100%;
-  background-image: linear-gradient(to right bottom, var(--color-red), var(--color-red-dark));
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-red),
+    var(--color-red-dark)
+  );
   z-index: 2;
   border-radius: var(--border-radius-px);
 }
@@ -40,12 +44,12 @@ header.header {
     font-size: 18px;
   }
   .dashboard-main-header {
-    padding: .25rem .5rem;
+    padding: 0.25rem 0.5rem;
   }
 }
 
 @media only screen and (max-width: 576px) {
   .dashboard-main-header {
-    padding: .25rem .5rem;
+    padding: 0.25rem 0.5rem;
   }
 }
