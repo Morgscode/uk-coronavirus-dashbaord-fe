@@ -9,7 +9,9 @@
   --border-radius-px: 3px;
 }
 
-*,*::before, *::after {
+*,
+*::before,
+*::after {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
@@ -30,6 +32,14 @@ body {
   z-index: 0;
 }
 
+body.chart-body {
+  padding-top: 0px !important;
+}
+
+body.chart-body header.header {
+  position: relative;
+}
+
 .heading-secondary {
   line-height: var(--line-height);
 }
@@ -44,11 +54,11 @@ body {
 
 .panel {
   display: block;
-  background-color: rgba(236, 240, 241,0.75);
+  background-color: rgba(236, 240, 241, 0.75);
   border-radius: var(--border-radius-px);
   position: relative;
   z-index: 1;
-  margin-bottom:45px
+  margin-bottom: 45px;
 }
 
 .chart {
@@ -60,14 +70,18 @@ body {
 }
 
 .panel::after {
-  content: '';
+  content: "";
   display: inline-block;
   position: absolute;
   bottom: 0px;
   left: 0px;
   height: var(--brand-strip-px);
   width: 100%;
-  background-image: linear-gradient(to right bottom, var(--color-red), var(--color-red-dark));
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-red),
+    var(--color-red-dark)
+  );
   z-index: 2;
   border-radius: var(--border-radius-px);
 }
@@ -79,7 +93,7 @@ body {
 
 .stats-figure--small {
   font-size: 1rem;
-} 
+}
 
 .table-row {
   border-bottom: 2px solid var(--color-black);
@@ -123,7 +137,7 @@ body {
   width: 25px;
   background-color: #bdc3c7;
   border-radius: 50%;
-  transition: background-color .2s;
+  transition: background-color 0.2s;
 }
 
 /* On mouse-over, add a grey background color */
@@ -156,7 +170,7 @@ body {
   height: 8px;
   border-radius: 50%;
   background: var(--color-white);
-} 
+}
 
 /* custom select */
 
@@ -200,7 +214,7 @@ body {
   }
   100% {
     opacity: 1;
-    transformY: 0%;
+    transformy: 0%;
   }
 }
 
@@ -211,14 +225,13 @@ body {
   }
   100% {
     opacity: 1;
-    transformY: 0%;
+    transformy: 0%;
   }
 }
 
 /* global media queries */
 
 @media only screen and (min-width: 1200px) {
-  
   .container {
     max-width: 1300px !important;
   }
@@ -241,7 +254,6 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-
   body {
     padding-top: 45px;
   }
@@ -268,7 +280,6 @@ body {
 }
 
 @media only screen and (max-width: 576px) {
-
   body {
     background-position: 50% 300px;
   }
@@ -289,5 +300,3 @@ body {
     display: none;
   }
 }
-
-
