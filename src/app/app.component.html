@@ -1,11 +1,7 @@
-
 <div class="app-wrapper">
   <img *ngIf="showBgImg" [src]="headerBgImg" class="header-bg-img" alt="UK Coronavirus statistics">
-  <header>
-    <app-navbar></app-navbar>
-  </header>
-<main>
-  <router-outlet></router-outlet>
-</main>
+  <app-header></app-header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
 </div>
- 

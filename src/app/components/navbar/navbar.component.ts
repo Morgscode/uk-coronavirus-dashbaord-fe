@@ -1,25 +1,27 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: "app-navbar",
+  templateUrl: "./navbar.component.html",
+  styleUrls: ["./navbar.component.css"],
 })
 export class NavbarComponent implements OnInit {
-  isActive: boolean;
+  event: Event;
+  @Input() public activeNav: boolean;
+  @Output() public closeNav: EventEmitter<Event> = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-    this.isActive = false;
+    this.activeNav = false;
   }
 
-  activateNav(event) {
-    this.isActive = true;
+  activateNav() {
+    this.activeNav = true;
   }
 
-  hideNav() {
-    this.isActive = false;
+  hideNav(event: Event) {
+    this.activeNav = false;
+    this.closeNav.emit(event);
   }
-
 }
