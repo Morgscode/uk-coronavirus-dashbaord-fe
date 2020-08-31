@@ -44,14 +44,21 @@ export class CovidStatisticsService {
   }
 
   public getAllCovidDeaths(): Observable<CovidMortalityStatisticGroup[]> {
-    return this.http.get<CovidMortalityStatisticGroup[]>(
+    const totals = this.http.get<CovidMortalityStatisticGroup[]>(
       `${this.covidStatsBaseUrl}${this.allCovidDeathsString}`
     );
+
+    console.log(totals);
+
+    return totals;
   }
 
   public getAllCovidCases(): Observable<CovidCasesStatisticGroup[]> {
-    return this.http.get<CovidCasesStatisticGroup[]>(
+    const totals = this.http.get<CovidCasesStatisticGroup[]>(
       `${this.covidStatsBaseUrl}${this.allCovidCasesString}`
     );
+
+    console.log(totals);
+    return totals;
   }
 }
