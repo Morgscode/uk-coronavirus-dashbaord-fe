@@ -32,7 +32,6 @@ header.header {
 
 .nav-trigger {
   position: relative;
-  left: -25px;
 }
 
 .nav-trigger:hover {
