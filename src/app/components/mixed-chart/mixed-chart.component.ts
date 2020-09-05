@@ -10,11 +10,11 @@ import { CovidCasesStatisticGroup } from "../../models/CovidCasesStatisticGroup"
 import { CovidMortalityStatisticGroup } from "../../models/CovidMortalityStatisticGroup";
 
 @Component({
-  selector: "app-chart",
-  templateUrl: "./chart.component.html",
-  styleUrls: ["./chart.component.css"],
+  selector: "app-mixed-chart",
+  templateUrl: "./mixed-chart.component.html",
+  styleUrls: ["./mixed-chart.component.css"],
 })
-export class ChartComponent implements OnInit {
+export class MixedChartComponent implements OnInit {
   covidCasesStatistics: CovidCasesStatisticGroup[];
   covidDeathStatistics: CovidMortalityStatisticGroup[];
   ChartData: ChartDataSets[] = [];

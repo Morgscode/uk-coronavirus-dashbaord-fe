@@ -1,6 +1,5 @@
-<app-chart-controls (setBarChart)="showBarChart()" (setLineChart)="showLineChart()"
-  (setDailyData)="prepareDailyChartData()" (setCumulativeData)="prepareCumulativeChartData()"
-  (setDataInterval)="changeDataInterval($event)"></app-chart-controls>
+<app-mixed-chart-controls (setDailyData)="prepareDailyChartData()" (setCumulativeData)="prepareCumulativeChartData()"
+  (setDataInterval)="changeDataInterval($event)"></app-mixed-chart-controls>
 <ng-template [ngIf]="chartLoaded">
   <h2 class="mb-4">Mixed data chart</h2>
   <div class="chart-container panel p-3">
