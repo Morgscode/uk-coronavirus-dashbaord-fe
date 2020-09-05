@@ -30,6 +30,7 @@ import { ChartControlsComponent } from "./components/chart-controls/chart-contro
 import { NotFoundComponent } from "./components/pages/not-found/not-found.component";
 import { MixedChartControlsComponent } from "./components/mixed-chart-controls/mixed-chart-controls.component";
 import { MortalityChartComponent } from './components/mortality-chart/mortality-chart.component';
+import { CasesChartComponent } from './components/cases-chart/cases-chart.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { MortalityChartComponent } from './components/mortality-chart/mortality-
     NotFoundComponent,
     MixedChartControlsComponent,
     MortalityChartComponent,
+    CasesChartComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "serverApp" }),

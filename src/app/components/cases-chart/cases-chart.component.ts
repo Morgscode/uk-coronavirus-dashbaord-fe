@@ -6,15 +6,15 @@ import { CovidStatisticsService } from "../../services/covid-statistics.service"
 import { DateConversionService } from "../../services/date-conversion.service";
 import { ChartDataService } from "../../services/chart-data.service";
 
-import { CovidMortalityStatisticGroup } from "../../models/CovidMortalityStatisticGroup";
+import { CovidCasesStatisticGroup } from "../../models/CovidCasesStatisticGroup";
 
 @Component({
-  selector: "app-mortality-chart",
-  templateUrl: "./mortality-chart.component.html",
-  styleUrls: ["./mortality-chart.component.css"],
+  selector: "app-cases-chart",
+  templateUrl: "./cases-chart.component.html",
+  styleUrls: ["./cases-chart.component.css"],
 })
-export class MortalityChartComponent implements OnInit {
-  covidDeathStatistics: CovidMortalityStatisticGroup[];
+export class CasesChartComponent implements OnInit {
+  covidCasesStatistics: CovidCasesStatisticGroup[];
   ChartData: ChartDataSets[] = [];
   ChartLabels: Label[] = [];
   ChartLegend: boolean;
@@ -34,12 +34,12 @@ export class MortalityChartComponent implements OnInit {
   @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
   async ngOnInit() {
-    const covidDeaths = await this.covidStatsService
-      .getAllCovidDeaths()
+    const covidCases = await this.covidStatsService
+      .getAllCovidCases()
       .toPromise()
       .then((data) => {
-        this.covidDeathStatistics = data;
-        for (let covidDeathStatistic of this.covidDeathStatistics) {
+        this.covidCasesStatistics = data;
+        for (let covidDeathStatistic of this.covidCasesStatistics) {
           covidDeathStatistic.date = this.sqlDateConverter.convertFromSQLDate(
             covidDeathStatistic.date
           );
@@ -51,12 +51,12 @@ export class MortalityChartComponent implements OnInit {
   }
 
   public prepareDailyChartData() {
-    const deathsLabel: string = "Confirmed covid-19 associated deaths";
+    const deathsLabel: string = "Confirmed covid-19 indections";
     this.resetChartState(deathsLabel);
     this.isDaily = true;
     this.isCumulative = false;
     return this.chartDataService.prepareDailyGraphData(
-      this.covidDeathStatistics,
+      this.covidCasesStatistics,
       this.ChartData,
       this.ChartLabels,
       this.ChartDataInterval
@@ -64,12 +64,12 @@ export class MortalityChartComponent implements OnInit {
   }
 
   public prepareCumulativeChartData() {
-    const deathsLabel: string = "Cumulative covid-19 associated deaths";
+    const deathsLabel: string = "Cumulative confirmed covid-19 infections";
     this.resetChartState(deathsLabel);
     this.isDaily = false;
     this.isCumulative = true;
     return this.chartDataService.prepareCumulativeGraphData(
-      this.covidDeathStatistics,
+      this.covidCasesStatistics,
       this.ChartData,
       this.ChartLabels,
       this.ChartDataInterval

@@ -64,29 +64,37 @@ export class ChartDataService {
     }
   }
 
-  public prepareDailyMortalityGraphData(
-    deathsData: CovidMortalityStatisticGroup[],
+  public prepareDailyGraphData(
+    data: any[],
     lineChartData: ChartDataSets[],
     lineChartLabels: Label[],
     dataInterval: number
   ) {
-    let deathsDataIndex: number = 0;
-    let arrLengthDiff: number = deathsData.length - deathsData.length;
-    for (
-      let arrIndex = 0;
-      arrIndex < deathsData.length;
-      arrIndex += dataInterval
-    ) {
-      lineChartData[0].data.push(deathsData[arrIndex].daily_uk_covid_deaths);
-      if (arrIndex < arrLengthDiff) {
-        lineChartData[1].data.push(0);
+    for (let arrIndex = 0; arrIndex < data.length; arrIndex += dataInterval) {
+      console.log(data[arrIndex]);
+      if (data[arrIndex].daily_uk_covid_deaths) {
+        lineChartData[0].data.push(data[arrIndex].daily_uk_covid_deaths);
       } else {
-        lineChartData[1].data.push(
-          deathsData[deathsDataIndex].daily_uk_covid_deaths
-        );
-        deathsDataIndex += dataInterval;
+        lineChartData[0].data.push(data[arrIndex].daily_confirmed_cases);
       }
-      lineChartLabels.push(deathsData[arrIndex].date);
+      lineChartLabels.push(data[arrIndex].date);
+    }
+  }
+
+  public prepareCumulativeGraphData(
+    data: any[],
+    lineChartData: ChartDataSets[],
+    lineChartLabels: Label[],
+    dataInterval: number
+  ) {
+    for (let arrIndex = 0; arrIndex < data.length; arrIndex += dataInterval) {
+      console.log(data[arrIndex]);
+      if (data[arrIndex].daily_uk_covid_deaths) {
+        lineChartData[0].data.push(data[arrIndex].uk_death_total);
+      } else {
+        lineChartData[0].data.push(data[arrIndex].uk_total_confirmed_cases);
+      }
+      lineChartLabels.push(data[arrIndex].date);
     }
   }
 }

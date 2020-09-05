@@ -15,6 +15,7 @@
         </div>
       </form>
     </div>
+
     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6 no-padd-sm">
       <form class="form d-flex align-items-center">
         <div class="form-group pl-3 pr-3">
@@ -31,16 +32,18 @@
         </div>
       </form>
     </div>
-    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6 d-flex align-items-center">
-      <small><label for="dataInterval">See stats for every: </label></small>
-      <div class="select-wrapper">
-        <select class="ml-1" [(ngModel)]="dataInterval" (change)="emitDataInterval()" name="dataInterval">
-          <option value="1" selected="selected">1 Day</option>
-          <option value="2">2 Days</option>
-          <option value="5">5 Days</option>
-          <option value="7">7 Days</option>
-        </select>
+    <ng-template [ngIf]="isCumulative">
+      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6 d-flex align-items-center">
+        <small><label for="dataInterval">See stats for every: </label></small>
+        <div class="select-wrapper">
+          <select class="ml-1" [(ngModel)]="dataInterval" (change)="emitDataInterval()" name="dataInterval">
+            <option value="1" selected="selected">1 Day</option>
+            <option value="2">2 Days</option>
+            <option value="5">5 Days</option>
+            <option value="7">7 Days</option>
+          </select>
+        </div>
       </div>
-    </div>
+    </ng-template>
   </div>
 </div>
