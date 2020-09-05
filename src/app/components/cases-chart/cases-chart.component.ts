@@ -7,20 +7,18 @@ import { DateConversionService } from "../../services/date-conversion.service";
 import { ChartDataService } from "../../services/chart-data.service";
 
 import { CovidCasesStatisticGroup } from "../../models/CovidCasesStatisticGroup";
-import { CovidMortalityStatisticGroup } from "../../models/CovidMortalityStatisticGroup";
 
 @Component({
-  selector: "app-mixed-chart",
-  templateUrl: "./mixed-chart.component.html",
-  styleUrls: ["./mixed-chart.component.css"],
+  selector: "app-cases-chart",
+  templateUrl: "./cases-chart.component.html",
+  styleUrls: ["./cases-chart.component.css"],
 })
-export class MixedChartComponent implements OnInit {
+export class CasesChartComponent implements OnInit {
   covidCasesStatistics: CovidCasesStatisticGroup[];
-  covidDeathStatistics: CovidMortalityStatisticGroup[];
   ChartData: ChartDataSets[] = [];
   ChartLabels: Label[] = [];
   ChartLegend: boolean;
-  ChartType: string = "line";
+  ChartType: string = "bar";
   ChartOptions: ChartOptions = {};
   ChartDataInterval: number = 1;
   chartLoaded: boolean = false;
@@ -36,41 +34,29 @@ export class MixedChartComponent implements OnInit {
   @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
   async ngOnInit() {
-    try {
-      const covidCases = await this.covidStatsService
-        .getAllCovidCases()
-        .toPromise()
-        .then((data) => {
-          this.covidCasesStatistics = data;
-          for (let covidCasesStatistic of this.covidCasesStatistics) {
-            covidCasesStatistic.date = this.sqlDateConverter.convertFromSQLDate(
-              covidCasesStatistic.date
-            );
-          }
-        })
-        .catch((err) => console.log(err));
-      const covidDeaths = await this.covidStatsService
-        .getAllCovidDeaths()
-        .toPromise()
-        .then((data) => (this.covidDeathStatistics = data))
-        .catch((err) => console.log(err));
-    } catch (err) {
-      console.log(err);
-    } finally {
-      this.initializeChart();
-      this.chartLoaded = true;
-    }
+    const covidCases = await this.covidStatsService
+      .getAllCovidCases()
+      .toPromise()
+      .then((data) => {
+        this.covidCasesStatistics = data;
+        for (let covidDeathStatistic of this.covidCasesStatistics) {
+          covidDeathStatistic.date = this.sqlDateConverter.convertFromSQLDate(
+            covidDeathStatistic.date
+          );
+        }
+      })
+      .catch((err) => console.log(err));
+    this.initializeChart();
+    this.chartLoaded = true;
   }
 
   public prepareDailyChartData() {
-    const casesLabel: string = "Confirmed covid-19 infections";
-    const deathsLabel: string = "Confirmed covid-19 associated deaths";
-    this.resetChartState(casesLabel, deathsLabel);
+    const deathsLabel: string = "Confirmed covid-19 indections";
+    this.resetChartState(deathsLabel);
     this.isDaily = true;
     this.isCumulative = false;
-    return this.chartDataService.prepareMixedDailyGraphData(
+    return this.chartDataService.prepareDailyGraphData(
       this.covidCasesStatistics,
-      this.covidDeathStatistics,
       this.ChartData,
       this.ChartLabels,
       this.ChartDataInterval
@@ -78,15 +64,12 @@ export class MixedChartComponent implements OnInit {
   }
 
   public prepareCumulativeChartData() {
-    const casesLabel: string =
-      "Cumulative total of covid-19 infections to date";
-    const deathsLabel: string = "Cumulative covid-19 associated deaths";
-    this.resetChartState(casesLabel, deathsLabel);
+    const deathsLabel: string = "Cumulative confirmed covid-19 infections";
+    this.resetChartState(deathsLabel);
     this.isDaily = false;
     this.isCumulative = true;
-    return this.chartDataService.prepareMixedCumulativeGraphData(
+    return this.chartDataService.prepareCumulativeGraphData(
       this.covidCasesStatistics,
-      this.covidDeathStatistics,
       this.ChartData,
       this.ChartLabels,
       this.ChartDataInterval
@@ -100,19 +83,16 @@ export class MixedChartComponent implements OnInit {
     this.ChartLegend = true;
   }
 
-  protected resetChartState(casesLabel: string, deathsLabel: string): void {
-    this.ChartData = [
-      { data: [], label: casesLabel },
-      { data: [], label: deathsLabel },
-    ];
+  protected resetChartState(deathsLabel: string): void {
+    this.ChartData = [{ data: [], label: deathsLabel }];
     this.ChartLabels = [];
   }
 
-  public showBarChart(): void {
+  public showBarChart() {
     this.ChartType = "bar";
   }
 
-  public showLineChart(): void {
+  public showLineChart() {
     this.ChartType = "line";
   }
 

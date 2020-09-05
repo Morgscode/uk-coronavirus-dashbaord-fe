@@ -1,6 +1,7 @@
-<h2 class="mb-4">Mixed data chart</h2>
-<app-mixed-chart-controls (setDailyData)="prepareDailyChartData()" (setCumulativeData)="prepareCumulativeChartData()"
-  (setDataInterval)="changeDataInterval($event)"></app-mixed-chart-controls>
+<h2 class="mb-4">COVID-19 associated mortality data chart</h2>
+<app-chart-controls (setDailyData)="prepareDailyChartData()" (setCumulativeData)="prepareCumulativeChartData()"
+  (setBarChart)="showBarChart()" (setLineChart)="showLineChart()" (setDataInterval)="changeDataInterval($event)">
+</app-chart-controls>
 <ng-template [ngIf]="chartLoaded">
   <div class="chart-container panel p-3">
     <div class="chart p3">

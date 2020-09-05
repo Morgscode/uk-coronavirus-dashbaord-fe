@@ -1,14 +1,10 @@
 <header class="header">
-  <div class="container-fluid dashboard-main-header">
-    <div class="row">
-      <div class="col-8">
-        <a routerLink="/">
-          <h2 class="text-light header-brand">Track UK Coronavirus Statistics</h2>
-        </a>
-      </div>
-      <div class="nav-trigger ml-auto" (click)="activateNav()">
-        <h2><i class="fa fa-bars nav-trigger-icon"></i></h2>
-      </div>
+  <div class="container-fluid dashboard-main-header d-flex justify-content-apart align-items-center">
+    <a routerLink="/">
+      <h2 class="text-light header-brand">Track UK Coronavirus Statistics</h2>
+    </a>
+    <div class=" nav-trigger ml-auto" (click)="activateNav()">
+      <h2><i class="fa fa-bars nav-trigger-icon"></i></h2>
     </div>
   </div>
 </header>
