@@ -6,8 +6,8 @@ import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
   styleUrls: ["./mixed-chart-controls.component.css"],
 })
 export class MixedChartControlsComponent implements OnInit {
-  @Output() setCumulativeData: EventEmitter<any> = new EventEmitter();
-  @Output() setDailyData: EventEmitter<any> = new EventEmitter();
+  @Output() setCumulativeData: EventEmitter<Event> = new EventEmitter();
+  @Output() setDailyData: EventEmitter<Event> = new EventEmitter();
   @Output() setDataInterval: EventEmitter<number> = new EventEmitter();
   @Input() dataInterval: number;
   isDaily: boolean;
@@ -28,6 +28,8 @@ export class MixedChartControlsComponent implements OnInit {
   }
 
   public emitDailyData(): void {
+    this.dataInterval = 1;
+    this.emitDataInterval();
     this.setDailyData.emit();
     this.isCumulative = false;
     this.isDaily = true;

@@ -14,7 +14,7 @@ import { NHSConditionMetaService } from "./services/nhs-condition-meta.service";
 import { DateConversionService } from "./services/date-conversion.service";
 import { ChartDataService } from "./services/chart-data.service";
 import { CovidMortalityDailyTotalComponent } from "./components/covid-mortality-daily-total/covid-mortality-daily-total.component";
-import { CovidCasesTotalComponent } from "./components/covid-cases-daily-total/covid-cases-total/covid-cases-total.component";
+import { CovidCasesTotalComponent } from "./components/covid-cases-total/covid-cases-total.component";
 import { CovidCasesDailyTotalComponent } from "./components/covid-cases-daily-total/covid-cases-daily-total.component";
 import { NHSCovidInfoComponent } from "./components/nhs-covid-info/nhs-covid-info.component";
 import { HeaderComponent } from "./components/header/header.component";
@@ -28,7 +28,7 @@ import { MixedChartComponent } from "./components/mixed-chart/mixed-chart.compon
 import { ChartsComponent } from "./components/pages/charts/charts.component";
 import { ChartControlsComponent } from "./components/chart-controls/chart-controls.component";
 import { NotFoundComponent } from "./components/pages/not-found/not-found.component";
-import { MixedChartControlsComponent } from './components/mixed-chart-controls/mixed-chart-controls.component';
+import { MixedChartControlsComponent } from "./components/mixed-chart-controls/mixed-chart-controls.component";
 
 @NgModule({
   declarations: [
