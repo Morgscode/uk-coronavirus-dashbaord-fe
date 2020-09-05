@@ -28,6 +28,8 @@ export class MixedChartControlsComponent implements OnInit {
   }
 
   public emitDailyData(): void {
+    this.dataInterval = 1;
+    this.emitDataInterval();
     this.setDailyData.emit();
     this.isCumulative = false;
     this.isDaily = true;
