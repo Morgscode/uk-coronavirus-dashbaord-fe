@@ -1,27 +1,27 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-chart-controls',
-  templateUrl: './chart-controls.component.html',
-  styleUrls: ['./chart-controls.component.css']
+  selector: "app-chart-controls",
+  templateUrl: "./chart-controls.component.html",
+  styleUrls: ["./chart-controls.component.css"],
 })
 export class ChartControlsComponent implements OnInit {
-  @Output() setBarChart:EventEmitter<any> = new EventEmitter();
-  @Output() setLineChart:EventEmitter<any> = new EventEmitter();
+  @Output() setBarChart: EventEmitter<any> = new EventEmitter();
+  @Output() setLineChart: EventEmitter<any> = new EventEmitter();
   @Output() setCumulativeData: EventEmitter<any> = new EventEmitter();
   @Output() setDailyData: EventEmitter<any> = new EventEmitter();
   @Output() setDataInterval: EventEmitter<number> = new EventEmitter();
-  @Input()  dataInterval: number;
+  @Input() dataInterval: number;
   isLineGraph: boolean;
   isBarChart: boolean;
   isDaily: boolean;
   isCumulative: boolean;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-    this.isLineGraph = true;
-    this.isBarChart = false;
+    this.isLineGraph = false;
+    this.isBarChart = true;
     this.isDaily = true;
     this.isCumulative = false;
     this.dataInterval = 1;
@@ -46,6 +46,8 @@ export class ChartControlsComponent implements OnInit {
   }
 
   public emitDailyData(): void {
+    this.dataInterval = 1;
+    this.emitDataInterval();
     this.setDailyData.emit();
     this.isCumulative = false;
     this.isDaily = true;
@@ -54,5 +56,4 @@ export class ChartControlsComponent implements OnInit {
   public emitDataInterval(): void {
     this.setDataInterval.emit(Number(this.dataInterval));
   }
-
 }
