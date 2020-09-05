@@ -47,15 +47,16 @@ export class ChartComponent implements OnInit {
               covidCasesStatistic.date
             );
           }
-        });
+        })
+        .catch((err) => console.log(err));
       const covidDeaths = await this.covidStatsService
         .getAllCovidDeaths()
         .toPromise()
-        .then((data) => (this.covidDeathStatistics = data));
+        .then((data) => (this.covidDeathStatistics = data))
+        .catch((err) => console.log(err));
     } catch (err) {
       console.log(err);
     } finally {
-      console.log("there were no errors");
       this.initializeChart();
       this.chartLoaded = true;
     }
