@@ -2,6 +2,7 @@
   (setDailyData)="prepareDailyChartData()" (setCumulativeData)="prepareCumulativeChartData()"
   (setDataInterval)="changeDataInterval($event)"></app-chart-controls>
 <ng-template [ngIf]="chartLoaded">
+  <h2 class="mb-4">Mixed data chart</h2>
   <div class="chart-container panel p-3">
     <div class="chart p3">
       <canvas baseChart width="100%" [datasets]="ChartData" [labels]="ChartLabels" [legend]="ChartLegend"

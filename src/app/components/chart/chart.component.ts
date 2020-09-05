@@ -39,8 +39,9 @@ export class ChartComponent implements OnInit {
     try {
       const covidCases = await this.covidStatsService
         .getAllCovidCases()
-        .subscribe((covidCases) => {
-          this.covidCasesStatistics = covidCases;
+        .toPromise()
+        .then((data) => {
+          this.covidCasesStatistics = data;
           for (let covidCasesStatistic of this.covidCasesStatistics) {
             covidCasesStatistic.date = this.sqlDateConverter.convertFromSQLDate(
               covidCasesStatistic.date
@@ -49,13 +50,14 @@ export class ChartComponent implements OnInit {
         });
       const covidDeaths = await this.covidStatsService
         .getAllCovidDeaths()
-        .subscribe((covidDeaths) => {
-          this.covidDeathStatistics = covidDeaths;
-          this.initializeChart();
-          this.chartLoaded = true;
-        });
+        .toPromise()
+        .then((data) => (this.covidDeathStatistics = data));
     } catch (err) {
       console.log(err);
+    } finally {
+      console.log("there were no errors");
+      this.initializeChart();
+      this.chartLoaded = true;
     }
   }
 
