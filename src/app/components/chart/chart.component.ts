@@ -40,7 +40,14 @@ export class ChartComponent implements OnInit {
       const covidCases = await this.covidStatsService
         .getAllCovidCases()
         .toPromise()
-        .then((data) => (this.covidCasesStatistics = data));
+        .then((data) => {
+          this.covidCasesStatistics = data;
+          for (let covidCasesStatistic of this.covidCasesStatistics) {
+            covidCasesStatistic.date = this.sqlDateConverter.convertFromSQLDate(
+              covidCasesStatistic.date
+            );
+          }
+        });
       const covidDeaths = await this.covidStatsService
         .getAllCovidDeaths()
         .toPromise()
