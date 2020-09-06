@@ -1,4 +1,4 @@
-<h2 class="mb-4">COVID-19 associated mortality data chart</h2>
+<h2 class="mb-4">{{ chartTitle }}</h2>
 <app-chart-controls (setDailyData)="prepareDailyChartData()" (setCumulativeData)="prepareCumulativeChartData()"
   (setBarChart)="showBarChart()" (setLineChart)="showLineChart()" (setDataInterval)="changeDataInterval($event)">
 </app-chart-controls>

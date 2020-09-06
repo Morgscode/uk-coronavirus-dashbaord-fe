@@ -29,8 +29,7 @@ import { ChartsComponent } from "./components/pages/charts/charts.component";
 import { ChartControlsComponent } from "./components/chart-controls/chart-controls.component";
 import { NotFoundComponent } from "./components/pages/not-found/not-found.component";
 import { MixedChartControlsComponent } from "./components/mixed-chart-controls/mixed-chart-controls.component";
-import { MortalityChartComponent } from './components/mortality-chart/mortality-chart.component';
-import { CasesChartComponent } from './components/cases-chart/cases-chart.component';
+import { SingleChartComponent } from "./components/single-chart/single-chart.component";
 
 @NgModule({
   declarations: [
@@ -54,8 +53,8 @@ import { CasesChartComponent } from './components/cases-chart/cases-chart.compon
     ChartControlsComponent,
     NotFoundComponent,
     MixedChartControlsComponent,
-    MortalityChartComponent,
-    CasesChartComponent,
+
+    SingleChartComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "serverApp" }),
