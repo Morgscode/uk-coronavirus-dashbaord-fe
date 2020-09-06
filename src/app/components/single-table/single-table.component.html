@@ -1,0 +1,12 @@
+<div class="panel p-3 single-table-container">
+  <div class="table-row" *ngFor="let statistic of statistics">
+    <div class="row">
+      <div class="col-md-4 col-sm-12 col-xs-12 table-cell text-center"> Date: <span
+          class="stats-figure">{{ statistic.date }}</span> </div>
+      <div class="col-md-4 col-sm-12 col-xs-12 table-cell text-center"> {{ dailyStatTitle }} <span
+          class="stats-figure">{{ statistic.dailyFigure | number:'':'en-GB' }}</span> </div>
+      <div class="col-md-4 col-sm-12 col-xs-12 table-cell text-center"> Cumulative total: <span
+          class="stats-figure">{{ statistic.cumulativeFigure | number:'':'en-GB' }}</span></div>
+    </div>
+  </div>
+</div>
