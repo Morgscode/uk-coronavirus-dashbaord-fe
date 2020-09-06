@@ -46,10 +46,7 @@ export class HomeComponent implements OnInit {
           this.latestCovidInfectionStats.date
         );
       })
-      .catch((err) => console.log(err))
-      .finally(() => {
-        console.log(this.latestCovidInfectionStats);
-      });
+      .catch((err) => console.log(err));
   }
 
   public async getLatestMortalityData() {
@@ -62,10 +59,7 @@ export class HomeComponent implements OnInit {
           this.latestCovidMortalityStats.date
         );
       })
-      .catch((err) => console.log(err))
-      .finally(() => {
-        console.log(this.latestCovidMortalityStats);
-      });
+      .catch((err) => console.log(err));
   }
 
   public setupPageMeta() {
