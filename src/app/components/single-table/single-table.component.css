@@ -1,0 +1,9 @@
+.single-table-container {
+  animation: slideInRight 2s ease;
+}
+
+@media only screen and (max-width: 576px) {
+  .single-table-container {
+    animation: slideInRight 0.2s ease;
+  }
+}

@@ -1,9 +1,9 @@
 <div class="tables pt-4">
   <app-tables-controls (showCases)="showCases()" (showDeaths)="showDeaths()"></app-tables-controls>
-<ng-template [ngIf]="casesActive">
-  <app-cases-table></app-cases-table>
-</ng-template>
-<ng-template [ngIf]="deathsActive">
-  <app-deaths-table></app-deaths-table>
-</ng-template>
+  <ng-template [ngIf]="casesActive">
+    <app-single-table [statistics]="infectionStatistics" [dailyStatTitle]="dailyInfectionStatTitle"></app-single-table>
+  </ng-template>
+  <ng-template [ngIf]="deathsActive">
+    <app-single-table [statistics]="mortalityStatistics" [dailyStatTitle]="dailyMortalityStatTitle"></app-single-table>
+  </ng-template>
 </div>
