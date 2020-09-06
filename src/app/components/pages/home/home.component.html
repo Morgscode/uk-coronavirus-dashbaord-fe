@@ -43,7 +43,7 @@
     <div class="col-sm-6 col-xs-12">
       <ng-template [ngIf]="latestCovidInfectionStats">
         <app-single-stat-panel [title]="covidCasesDailyPanelTitle"
-          [statistic]="latestCovidInfectionStats.daily_confirmed_cases" [date]="latestCovidMortalityStats.date">
+          [statistic]="latestCovidInfectionStats.daily_confirmed_cases" [date]="latestCovidInfectionStats.date">
         </app-single-stat-panel>
       </ng-template>
     </div>
