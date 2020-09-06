@@ -62,7 +62,6 @@ export class ChartsComponent implements OnInit {
       .getAllCovidCases()
       .toPromise()
       .then((data) => {
-        console.log(data);
         this.covidCasesStatistics = data;
         for (let covidDeathStatistic of this.covidCasesStatistics) {
           covidDeathStatistic.date = this.sqlDateConverter.convertFromSQLDate(

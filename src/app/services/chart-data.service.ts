@@ -141,7 +141,6 @@ export class ChartDataService {
     dataInterval: number
   ) {
     for (let arrIndex = 0; arrIndex < data.length; arrIndex += dataInterval) {
-      console.log(data[arrIndex]);
       if (data[arrIndex].daily_uk_covid_deaths) {
         lineChartData[0].data.push(data[arrIndex].uk_death_total);
       } else {
