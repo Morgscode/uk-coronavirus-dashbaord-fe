@@ -27,8 +27,8 @@ export class SingleChartComponent implements OnInit {
 
   @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
-  ngOnInit(): void {
-    this.initializeChart();
+  async ngOnInit() {
+    await this.initializeChart();
     this.chartLoaded = true;
   }
 

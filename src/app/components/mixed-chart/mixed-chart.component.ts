@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, Input } from "@angular/core";
 import { ChartDataSets, ChartOptions } from "chart.js";
 import { BaseChartDirective, Label } from "ng2-charts";
 
@@ -15,8 +15,8 @@ import { CovidMortalityStatisticGroup } from "../../models/CovidMortalityStatist
   styleUrls: ["./mixed-chart.component.css"],
 })
 export class MixedChartComponent implements OnInit {
-  covidCasesStatistics: CovidCasesStatisticGroup[];
-  covidDeathStatistics: CovidMortalityStatisticGroup[];
+  @Input() covidInfectionStatistics: CovidCasesStatisticGroup[];
+  @Input() covidMortalityStatistics: CovidMortalityStatisticGroup[];
   ChartData: ChartDataSets[] = [];
   ChartLabels: Label[] = [];
   ChartLegend: boolean;
@@ -27,39 +27,13 @@ export class MixedChartComponent implements OnInit {
   isDaily: boolean = true;
   isCumulative: boolean = false;
 
-  constructor(
-    private covidStatsService: CovidStatisticsService,
-    private sqlDateConverter: DateConversionService,
-    private chartDataService: ChartDataService
-  ) {}
+  constructor(private chartDataService: ChartDataService) {}
 
   @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
-  async ngOnInit() {
-    try {
-      const covidCases = await this.covidStatsService
-        .getAllCovidCases()
-        .toPromise()
-        .then((data) => {
-          this.covidCasesStatistics = data;
-          for (let covidCasesStatistic of this.covidCasesStatistics) {
-            covidCasesStatistic.date = this.sqlDateConverter.convertFromSQLDate(
-              covidCasesStatistic.date
-            );
-          }
-        })
-        .catch((err) => console.log(err));
-      const covidDeaths = await this.covidStatsService
-        .getAllCovidDeaths()
-        .toPromise()
-        .then((data) => (this.covidDeathStatistics = data))
-        .catch((err) => console.log(err));
-    } catch (err) {
-      console.log(err);
-    } finally {
-      this.initializeChart();
-      this.chartLoaded = true;
-    }
+  ngOnInit() {
+    this.initializeChart();
+    this.chartLoaded = true;
   }
 
   public prepareDailyChartData() {
@@ -69,8 +43,8 @@ export class MixedChartComponent implements OnInit {
     this.isDaily = true;
     this.isCumulative = false;
     return this.chartDataService.prepareMixedDailyGraphData(
-      this.covidCasesStatistics,
-      this.covidDeathStatistics,
+      this.covidInfectionStatistics,
+      this.covidMortalityStatistics,
       this.ChartData,
       this.ChartLabels,
       this.ChartDataInterval
@@ -78,15 +52,14 @@ export class MixedChartComponent implements OnInit {
   }
 
   public prepareCumulativeChartData() {
-    const casesLabel: string =
-      "Cumulative total of covid-19 infections to date";
+    const casesLabel: string = "Cumulative covid-19 infections";
     const deathsLabel: string = "Cumulative covid-19 associated deaths";
     this.resetChartState(casesLabel, deathsLabel);
     this.isDaily = false;
     this.isCumulative = true;
     return this.chartDataService.prepareMixedCumulativeGraphData(
-      this.covidCasesStatistics,
-      this.covidDeathStatistics,
+      this.covidInfectionStatistics,
+      this.covidMortalityStatistics,
       this.ChartData,
       this.ChartLabels,
       this.ChartDataInterval
