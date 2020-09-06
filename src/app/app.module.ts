@@ -22,14 +22,13 @@ import { AboutComponent } from "./components/pages/about/about.component";
 import { TablesComponent } from "./components/pages/tables/tables.component";
 import { TableControlsComponent } from "./components/table-controls/table-controls.component";
 import { TableWrapperComponent } from "./components/table-wrapper/table-wrapper.component";
-import { CasesTableComponent } from "./components/cases-table/cases-table.component";
-import { DeathsTableComponent } from "./components/deaths-table/deaths-table.component";
 import { MixedChartComponent } from "./components/mixed-chart/mixed-chart.component";
 import { ChartsComponent } from "./components/pages/charts/charts.component";
 import { ChartControlsComponent } from "./components/chart-controls/chart-controls.component";
 import { NotFoundComponent } from "./components/pages/not-found/not-found.component";
 import { MixedChartControlsComponent } from "./components/mixed-chart-controls/mixed-chart-controls.component";
 import { SingleChartComponent } from "./components/single-chart/single-chart.component";
+import { SingleTableComponent } from "./components/single-table/single-table.component";
 
 @NgModule({
   declarations: [
@@ -46,15 +45,13 @@ import { SingleChartComponent } from "./components/single-chart/single-chart.com
     TablesComponent,
     TableControlsComponent,
     TableWrapperComponent,
-    CasesTableComponent,
-    DeathsTableComponent,
     MixedChartComponent,
     ChartsComponent,
     ChartControlsComponent,
     NotFoundComponent,
     MixedChartControlsComponent,
-
     SingleChartComponent,
+    SingleTableComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "serverApp" }),
