@@ -20,16 +20,32 @@
       </div>
     </div>
     <div class="col-md-6 col-sm-12">
-      <app-covid-mortality-total></app-covid-mortality-total>
-      <app-covid-cases-total></app-covid-cases-total>
+      <ng-template [ngIf]="latestCovidMortalityStats">
+        <app-single-stat-panel [title]="covidMortalityCumulativePanelTitle"
+          [statistic]="latestCovidMortalityStats.uk_death_total" [date]="latestCovidMortalityStats.date">
+        </app-single-stat-panel>
+      </ng-template>
+      <ng-template [ngIf]="latestCovidInfectionStats">
+        <app-single-stat-panel [title]="covidCasesCumulativePanelTitle"
+          [statistic]="latestCovidInfectionStats.uk_total_confirmed_cases" [date]="latestCovidInfectionStats.date">
+        </app-single-stat-panel>
+      </ng-template>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-6 col-xs-12">
-      <app-covid-mortality-daily-total></app-covid-mortality-daily-total>
+      <ng-template [ngIf]="latestCovidMortalityStats">
+        <app-single-stat-panel [title]="covidMortalityDailyPanelTitle"
+          [statistic]="latestCovidMortalityStats.daily_uk_covid_deaths" [date]="latestCovidMortalityStats.date">
+        </app-single-stat-panel>
+      </ng-template>
     </div>
     <div class="col-sm-6 col-xs-12">
-      <app-covid-cases-daily-total></app-covid-cases-daily-total>
+      <ng-template [ngIf]="latestCovidInfectionStats">
+        <app-single-stat-panel [title]="covidCasesDailyPanelTitle"
+          [statistic]="latestCovidInfectionStats.daily_confirmed_cases" [date]="latestCovidMortalityStats.date">
+        </app-single-stat-panel>
+      </ng-template>
     </div>
   </div>
   <div class="row">

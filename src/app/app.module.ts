@@ -3,19 +3,14 @@ import { NgModule } from "@angular/core";
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
-
 import { ChartsModule } from "ng2-charts";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { HomeComponent } from "./components/pages/home/home.component";
-import { CovidMortalityTotalComponent } from "./components/covid-mortality-total/covid-mortality-total.component";
 import { CovidStatisticsService } from "./services/covid-statistics.service";
 import { NHSConditionMetaService } from "./services/nhs-condition-meta.service";
 import { DateConversionService } from "./services/date-conversion.service";
 import { ChartDataService } from "./services/chart-data.service";
-import { CovidMortalityDailyTotalComponent } from "./components/covid-mortality-daily-total/covid-mortality-daily-total.component";
-import { CovidCasesTotalComponent } from "./components/covid-cases-total/covid-cases-total.component";
-import { CovidCasesDailyTotalComponent } from "./components/covid-cases-daily-total/covid-cases-daily-total.component";
 import { NHSCovidInfoComponent } from "./components/nhs-covid-info/nhs-covid-info.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { AboutComponent } from "./components/pages/about/about.component";
@@ -29,16 +24,13 @@ import { NotFoundComponent } from "./components/pages/not-found/not-found.compon
 import { MixedChartControlsComponent } from "./components/mixed-chart-controls/mixed-chart-controls.component";
 import { SingleChartComponent } from "./components/single-chart/single-chart.component";
 import { SingleTableComponent } from "./components/single-table/single-table.component";
+import { SingleStatPanelComponent } from "./components/single-stat-panel/single-stat-panel.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    CovidMortalityTotalComponent,
-    CovidMortalityDailyTotalComponent,
-    CovidCasesTotalComponent,
-    CovidCasesDailyTotalComponent,
     NHSCovidInfoComponent,
     HeaderComponent,
     AboutComponent,
@@ -52,6 +44,7 @@ import { SingleTableComponent } from "./components/single-table/single-table.com
     MixedChartControlsComponent,
     SingleChartComponent,
     SingleTableComponent,
+    SingleStatPanelComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "serverApp" }),

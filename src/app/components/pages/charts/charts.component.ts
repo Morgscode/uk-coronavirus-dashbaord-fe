@@ -26,6 +26,7 @@ export class ChartsComponent implements OnInit {
     "Covid-19 associated mortality data chart";
   public covidInfectionStatistics: CovidCasesStatisticGroup[];
   public covidMortalityStatistics: CovidMortalityStatisticGroup[];
+
   constructor(
     private titleService: Title,
     private meta: Meta,
@@ -35,11 +36,11 @@ export class ChartsComponent implements OnInit {
     @Inject(DOCUMENT) private document: Document
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.renderer.addClass(this.document.body, "chart-body");
     this.setupPageMeta();
-    this.getMortalityChartData();
-    this.getInfectionsChartData();
+    await this.getMortalityChartData();
+    await this.getInfectionsChartData();
   }
 
   ngOnDestroy() {
