@@ -18,13 +18,13 @@ export class ChartsComponent implements OnInit {
   public casesDailyChartLabel: string = "Daily covid-19 confirmed infections";
   public casesCumulativeChartLabel: string =
     "Cumulative confirmed covid-19 infections";
-  public casesChartTitle: string = "Confirmed infections data chart";
-  public covidCasesStatistics: CovidCasesStatisticGroup[];
-  public mortalityChartTitle: string =
-    "Covid-19 associated mortality data chart";
   public mortalityDailyChartLabel: string = "Daily covid-19 associated deaths";
   public mortalityCumulativeChartLabel: string =
     "Cumulative covid-19 associated deaths";
+  public casesChartTitle: string = "Confirmed infections data chart";
+  public mortalityChartTitle: string =
+    "Covid-19 associated mortality data chart";
+  public covidInfectionStatistics: CovidCasesStatisticGroup[];
   public covidMortalityStatistics: CovidMortalityStatisticGroup[];
   constructor(
     private titleService: Title,
@@ -38,8 +38,8 @@ export class ChartsComponent implements OnInit {
   ngOnInit() {
     this.renderer.addClass(this.document.body, "chart-body");
     this.setupPageMeta();
-    this.getCasesChartData();
     this.getMortalityChartData();
+    this.getInfectionsChartData();
   }
 
   ngOnDestroy() {
@@ -57,15 +57,15 @@ export class ChartsComponent implements OnInit {
     });
   }
 
-  public async getCasesChartData() {
+  public async getInfectionsChartData() {
     const covidCases = await this.covidStatsService
       .getAllCovidCases()
       .toPromise()
       .then((data) => {
-        this.covidCasesStatistics = data;
-        for (let covidDeathStatistic of this.covidCasesStatistics) {
-          covidDeathStatistic.date = this.sqlDateConverter.convertFromSQLDate(
-            covidDeathStatistic.date
+        this.covidInfectionStatistics = data;
+        for (let covidInfectionStatistic of this.covidInfectionStatistics) {
+          covidInfectionStatistic.date = this.sqlDateConverter.convertFromSQLDate(
+            covidInfectionStatistic.date
           );
         }
       })
