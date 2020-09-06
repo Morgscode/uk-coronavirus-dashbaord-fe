@@ -1,49 +1,46 @@
 <div class="panel p-3 mt-4">
-  <div class="row justify-content-evenly">
-    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6 no-padd-sm">
-      <form class="form d-flex align-items-center">
-        <div class="form-group pl-3 pr-3">
-          <label class="radio-wrapper" for="deaths" (click)="emitLineChart()">Line graph
-            <input type="radio" name="charttype" value="line" [checked]="isLineGraph" id="line-graph-input"><span
-              class="checkmark"></span></label>
-        </div>
+  <form class="form d-flex align-items-center">
+    <div class="row w-100">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-6 d-flex align-items-center no-padd-sm">
         <div class="form-group pl-3 pr-3">
           <label class="radio-wrapper" for="cases" (click)="emitBarChart()">Bar chart
             <input type="radio" name="charttype" value="bar" [checked]="isBarChart" id="bar-chart-input"><span
               class="checkmark"></span>
           </label>
         </div>
-      </form>
-    </div>
-
-    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6 no-padd-sm">
-      <form class="form d-flex align-items-center">
         <div class="form-group pl-3 pr-3">
-          <label class="radio-wrapper" for="deaths" (click)="emitDailyData()">Daily total
+          <label class="radio-wrapper" for="deaths" (click)="emitLineChart()">Line graph
+            <input type="radio" name="charttype" value="line" [checked]="isLineGraph" id="line-graph-input"><span
+              class="checkmark"></span></label>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-6 d-flex align-items-center no-padd-sm">
+        <div class="form-group pl-3 pr-3">
+          <label class="radio-wrapper" for="deaths" (click)="emitDailyData()">Daily
             <input type="radio" name="datatype" value="line" [checked]="isDaily" id="daily-cases-input"><span
               class="checkmark"></span>
           </label>
         </div>
         <div class="form-group pl-3 pr-3">
-          <label class="radio-wrapper" for="cases" (click)="emitCumulativeData()">Cumulative total
+          <label class="radio-wrapper" for="cases" (click)="emitCumulativeData()">Cumulative
             <input type="radio" name="datatype" value="cumulative" [checked]="isCumulative"
               id="culmulative-cases-input"><span class="checkmark"></span>
           </label>
         </div>
-      </form>
-    </div>
-    <ng-template [ngIf]="isCumulative">
-      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6 d-flex align-items-center">
-        <small><label for="dataInterval">See stats for every: </label></small>
-        <div class="select-wrapper">
-          <select class="ml-1" [(ngModel)]="dataInterval" (change)="emitDataInterval()" name="dataInterval">
-            <option value="1" selected="selected">1 Day</option>
-            <option value="2">2 Days</option>
-            <option value="5">5 Days</option>
-            <option value="7">7 Days</option>
-          </select>
-        </div>
       </div>
-    </ng-template>
-  </div>
+      <ng-template [ngIf]="isCumulative">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-6 d-flex align-items-center">
+          <small><label for="dataInterval">See stats for every: </label></small>
+          <div class="select-wrapper">
+            <select class="ml-1" [(ngModel)]="dataInterval" (change)="emitDataInterval()" name="dataInterval">
+              <option value="1" selected="selected">1 Day</option>
+              <option value="2">2 Days</option>
+              <option value="5">5 Days</option>
+              <option value="7">7 Days</option>
+            </select>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </form>
 </div>

@@ -1,5 +1,12 @@
 <div class="container charts-container pt-4 pb-4">
   <app-mixed-chart></app-mixed-chart>
-  <app-mortality-chart></app-mortality-chart>
-  <app-cases-chart></app-cases-chart>
+  <ng-template [ngIf]="covidMortalityStatistics">
+    <app-single-chart [chartData]="covidMortalityStatistics" [chartTitle]="mortalityChartTitle"
+      [dailyChartLabel]="mortalityDailyChartLabel" [cumulativeChartLabel]="mortalityCumulativeChartLabel">
+    </app-single-chart>
+  </ng-template>
+  <ng-template [ngIf]="covidCasesStatistics">
+    <app-single-chart [chartData]="covidCasesStatistics" [chartTitle]="casesChartTitle"
+      [dailyChartLabel]="casesDailyChartLabel" [cumulativeChartLabel]="casesCumulativeChartLabel"></app-single-chart>
+  </ng-template>
 </div>
