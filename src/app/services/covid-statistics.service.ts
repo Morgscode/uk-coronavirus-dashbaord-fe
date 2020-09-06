@@ -5,10 +5,11 @@ import { CovidMortalityStatisticGroup } from "../models/CovidMortalityStatisticG
 import { CovidCasesStatisticGroup } from "../models/CovidCasesStatisticGroup";
 
 /**
+ *
  * This compoent makes http requests for
- * - uk-wide death/cases total to date
- * - most recent daily figure for deaths/cases
- * - entire daily_deaths/covid_cases table
+ * uk-wide death/cases total to date
+ * most recent daily figure for deaths/cases
+ * entire daily_deaths/covid_cases table
  *
  */
 
