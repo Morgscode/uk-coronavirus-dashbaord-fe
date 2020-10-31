@@ -18,9 +18,9 @@ export class ChartsComponent implements OnInit {
   public casesDailyChartLabel: string = "Daily covid-19 confirmed infections";
   public casesCumulativeChartLabel: string =
     "Cumulative confirmed covid-19 infections";
-  public mortalityDailyChartLabel: string = "Daily covid-19 associated deaths";
+  public mortalityDailyChartLabel: string = "Deaths within 28 days of positive test:";
   public mortalityCumulativeChartLabel: string =
-    "Cumulative covid-19 associated deaths";
+    "Cumulative deaths within 28 days of positive test";
   public casesChartTitle: string = "Confirmed infections data chart";
   public mortalityChartTitle: string =
     "Covid-19 associated mortality data chart";
