@@ -19,10 +19,10 @@ export class HomeComponent implements OnInit {
   covidCasesCumulativePanelTitle: string =
     "Confirmed COVID-19 infections UK wide:";
   covidMortalityDailyPanelTitle: string =
-    "Daily number of COVID-19 associated UK deaths:";
+    "Daily number of deaths within 28 days of positive test:";
   covidMortalityCumulativePanelTitle: string =
-    "Total COVID-19 associated UK deaths:";
-
+    "Total deaths within 28 days of positive test:";
+ 
   constructor(
     private titleService: Title,
     private meta: Meta,

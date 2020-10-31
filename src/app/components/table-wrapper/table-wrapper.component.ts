@@ -13,7 +13,7 @@ export class TableWrapperComponent implements OnInit {
   public infectionStatistics: CovidCasesStatisticGroup[];
   public mortalityStatistics: CovidMortalityStatisticGroup[];
   public dailyInfectionStatTitle: string = "Daily confirmed infections:";
-  public dailyMortalityStatTitle: string = "Daily confirmed associated deaths:";
+  public dailyMortalityStatTitle: string = "Deaths within 28 days of positive test:";
   public casesActive: boolean;
   public deathsActive: boolean;
 
