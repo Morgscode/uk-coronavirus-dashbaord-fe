@@ -16,7 +16,7 @@ export class NHSConditionMetaService {
       ? (this.covidInfoBaseUrl =
           "http://127.0.0.1:8888/uk-coronavirus-dashboard-api/public/info/")
       : (this.covidInfoBaseUrl =
-          "https://api.ukcoronavirusstatistics.com/info/");
+          "https://uk-coronavirus-dashboard-api.herokuapp.com/info/");
   }
 
   public getNHSConditionApiMeta(): Observable<NHSConditionApiMeta> {
