@@ -29,7 +29,7 @@ export class CovidStatisticsService {
       ? (this.covidStatsBaseUrl =
           "http://127.0.0.1:8888/uk-coronavirus-dashboard-api/public/stats/")
       : (this.covidStatsBaseUrl =
-          "https://api.ukcoronavirusstatistics.com/stats/");
+          "https://uk-coronavirus-dashboard-api.herokuapp.com/stats/");
   }
 
   public getCovidMortalityTotal(): Observable<CovidMortalityStatisticGroup> {
